@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSW payment</title>
+    <style>
+        body{
+            margin: 0%;
+            padding: 0%;
+            width: 100%;
+        }
+        #box{
+            margin: auto;
+            width: 30%;
+            align-items: center;
+            margin-top: 10vh;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        #box > input{
+            margin-top: 20px;
+            padding: 10px;
+            width: 80%;
+        }
+        #box > button{
+            margin-top: 20px;
+            padding: 10px;
+            background-color: rgb(0, 98, 255);
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h1>Payment Section</h1>
+        <input type="number" placeholder="Enter 16 digit card number"><br>
+        <input type="text" placeholder="Enter name on card"><br>
+        <input type="month" placeholder="Enter Expiry Date"><br>
+        <input type="password" placeholder="Enter CVV"><br>
+        <button id="place-order" onclick="submit()">Place Order</button><br>
+        <h3 id="order-message"></h3>
+    </div>
+</body>
+<script>
+    function submit(){
+    let orderConfirm = document.getElementById("order-message");
+    orderConfirm.textContent = "Order Placed Successfully";
+    localStorage.removeItem("cart");
+    setTimeout(()=>{
+        location.replace("index.html");
+    },3000);
+    }
+</script>
+</html>
